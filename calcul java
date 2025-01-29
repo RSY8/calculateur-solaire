@@ -1,0 +1,23 @@
+document.getElementById('calculer_btn').addEventListener('click', function() {
+    // Récupérer les valeurs saisies par l'utilisateur
+    const nombrePanneaux = parseInt(document.getElementById('nombre_panneaux').value);
+    const typePanneau = document.getElementById('type_panneau').value;
+    const orientation = document.getElementById('orientation').value;
+    const coutPanneaux = parseFloat(document.getElementById('cout_panneaux').value);
+    const coutInstallation = parseFloat(document.getElementById('cout_installation').value);
+    const prixVente = parseFloat(document.getElementById('prix_vente').value);
+    const productivite = parseFloat(document.getElementById('productivite').value);
+    const duree = parseInt(document.getElementById('duree').value);
+
+    // Calcul de la rentabilité
+    const coutTotal = nombrePanneaux * coutPanneaux + coutInstallation;
+    const revenuAnnuel = nombrePanneaux * productivite * prixVente;
+    const rentabilite = (revenuAnnuel * duree - coutTotal) / coutTotal * 100;
+
+    // Calcul du rendement (rendement annuel par panneau)
+    const rendement = productivite * prixVente;
+
+    // Affichage des résultats
+    document.getElementById('rentabilite').innerText = `Rentabilité de l'investissement : ${rentabilite.toFixed(2)}%`;
+    document.getElementById('rendement').innerText = `Rendement annuel par panneau : ${rendement.toFixed(2)} €`;
+});
