@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul Rentabilité Panneaux Photovoltaïques</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calcul du Rendement des Panneaux Photovoltaïques</h1>
+        
+        <label for="nombre_panneaux">Nombre de panneaux:</label>
+        <input type="number" id="nombre_panneaux" required>
+
+        <label for="type_panneau">Type de panneau:</label>
+        <select id="type_panneau">
+            <option value="500">Hétérojonction 500W</option>
+            <!-- Vous pouvez ajouter d'autres types de panneaux ici -->
+        </select>
+
+        <label for="orientation">Orientation des panneaux:</label>
+        <select id="orientation">
+            <option value="optimale">Optimale</option>
+            <option value="non_optimale">Non optimale</option>
+        </select>
+
+        <label for="cout_panneaux">Coût des panneaux (par panneau, en €):</label>
+        <input type="number" id="cout_panneaux" required>
+
+        <label for="cout_installation">Coût de l'installation (en €):</label>
+        <input type="number" id="cout_installation" required>
+
+        <label for="prix_vente">Prix de vente de l'électricité (en €/kWh):</label>
+        <input type="number" id="prix_vente" required>
+
+        <label for="productivite">Productivité annuelle par panneau (en kWh):</label>
+        <input type="number" id="productivite" required>
+
+        <label for="duree">Durée de l'investissement (en années):</label>
+        <input type="number" id="duree" required>
+
+        <button id="calculer_btn">Calculer</button>
+
+        <div id="resultat">
+            <h2>Résultat :</h2>
+            <p id="rentabilite"></p>
+            <p id="rendement"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
